@@ -35,7 +35,7 @@
 echo htmlentities($str); */
 
 
-echo str_repeat("Ashish ",3);
+ //echo str_repeat("Ashish ",3);
 
    
 ?>
