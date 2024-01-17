@@ -77,4 +77,6 @@ echo htmlentities($str); */
 
 //echo ucwords("my name is ashish");
 //Converts the first character of each word in a string to uppercase.
+
+//file end
 ?>
