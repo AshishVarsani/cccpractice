@@ -25,6 +25,9 @@
 
 
     // 2.Array modification
+
+
+
 /*
     $arr=[1,2,3,4];
     array_push($arr,"5","6");
@@ -53,9 +56,15 @@
     $array=[1,2,3,4,5,6,7];
     array_splice($array,3,2,["hi","hello","how","i"]);
     print_r($array);     */
+    //- Removes a portion of the array and replaces it with something else.
+
 
 
     // 3.Array excess
+
+
+
+
    /* 
     $array=[1,2,3,4,5,6];
     print_r(count($array)); 
@@ -79,7 +88,11 @@
       // Returns all the values of an array.
 
 
+
       // 4. Array Search:
+
+
+
     /*
     $array=array(2,4,6,8,10);
     var_dump(in_array("10",$array)); */
@@ -96,7 +109,11 @@
     //Returns an array with elements in reverse order.
 
 
+
     //5.Array Sorting:
+
+
+
     /*
     $array=array(12,4,6,18,1);
     sort($array);
@@ -134,33 +151,52 @@
     //sort associative arrays in descending order, according to the key
 
 
+
+
     //6. Array Filtering
-    $array=array(2,4,6,8);
-    filterarray$=array_filter($array,function($value))
-    {
-        return value%2==0
-    }
-    print_r($filterarray);
-    
-    // for($i=0;$i<5;$i++)
+
+
+
+    // $array=array(1,2,3,4,5,6,7,8);
+    // $filterarray=array_filter($array,function($value)
     // {
-    //     for($j=0;$j<5;$j++)
-    //     {
-    //        if($i<=$j) 
-    //        {
-    //         echo $j . " ";
-    //        }
-    //     }
-    //     echo "<br>";
-    
-    // }
-    
+    //     return $value%2==0;
+    // });
+    // print_r($filterarray);
+    //// Filters elements of an array using a callback function.
+
+
+    // $numbers = [0,1,3,5,6];
+    // $square = function ($num)
+    //  {
+    // return $num * $num;
+    //  };
+
+    // $squaredNumbers = array_map($square, $numbers);
+    // var_dump($squaredNumbers);
+    // //- Applies a callback function to each element of an array.
+
+
+    // $numbers = [1, 2, 3, 4, 5];
+    // $sumCallback = function ($carry, $item)
+    //  {
+    //     $carry += $item;
+    //     return $carry;
+    //  };
+    //  $sum = array_reduce($numbers, $sumCallback, 0);
+    // var_dump($sum);
 
 
 
+    //7.array slicing
 
 
 
+    // $a=array("red","green","blue","yellow","brown");
+    // print_r(array_slice($a,2,3,true));  //if it's false then it gives new array otherwise give old array but only length value shows
+    // // - Extracts a portion of the array.
+
+   
         
 
 
