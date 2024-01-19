@@ -196,6 +196,13 @@
     // print_r(array_slice($a,2,3,true));  //if it's false then it gives new array otherwise give old array but only length value shows
     // // - Extracts a portion of the array.
 
+    
+   /*
+    $array=[1,2,3,4,5,6,7];
+    array_splice($array,3,2,["hi","hello","how","i"]);
+    print_r($array);     */
+    //- Removes a portion of the array and replaces it with something else.
+
    
         
 
