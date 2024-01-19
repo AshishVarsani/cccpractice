@@ -158,7 +158,7 @@ echo $a . "<br>";    */
 
   //String Operators:
 
-   $a="how";
+ /*  $a="how";
    $b=" are you";
   $result=$a . $b;   //concatenation
   echo $result;
@@ -167,25 +167,91 @@ echo $a . "<br>";    */
   $a="i am ";
    $b="ashish";
   $result=  ($a .=  $b);      // $a=$a+$b;
-  echo $result;
+  echo $result;   */
 
 
   //  Ternary Operator
 
-  $age = 12;
+/*  $age = 12;
 $Student = true;          //(condition) ? true_expression : false_expression;
 $result = ($age <= 18 && $Student) ? "You are student." : "You are not a student.";
-echo $result . "<br>";
+echo $result . "<br>";  */
 
  
+ // if -else statement
+/*
+ $a=2;
+ $b=12;
+ $c=4;
+if($a>$b)
+{
+   echo "$a is grater than $b";
+}
+else
+{
+   echo "$a is less than $b";
+}
+echo "<br>";
+if($a>$c)
+{
+   echo "$a is grater than $c";  
+}
+else
+{
+   echo "$a is less than $c";  
+}
+*/
 
 
+  //switch-case
+/*
+  $favcolor = "black";
+switch ($favcolor) {
+  case "red":
+    echo "Your favorite color is red!";
+    break;
+  case "blue":
+     echo "Your favorite color is blue!";
+    break;
+  case "black":
+    echo "Your favorite color is black!";
+    break;
+  default:
+    echo "Your favorite color is neither red, blue, nor black!";
+}
+*/
+
+  //for loop
+/*
+  for ($i = 0; $i <= 10; $i++) {
+   if ($i == 3) break;
+   echo "The number is: $i <br>";
+ }   */
 
 
+ //while loop
 
+ /* $i = 1;
+while ($i < 6) {
+  echo $i . "<br>";
+  $i++;
+}  */
 
+   //do-while loop
 
+   /* $i = 1;
 
+   do {
+     echo $i . "<br>";
+     $i++;
+   } while ($i < 6);  */
+
+   // foreach loop
+/*
+   $fruits = array("apple", "banana", "orange", "grape");
+   foreach ($fruits as $avg) {
+       echo $avg . "<br>";
+   }   */
 
 
 
