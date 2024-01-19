@@ -8,16 +8,17 @@
   // replace the given string to
   
   //echo strpos("my name is ashish","ashish");
+  //give the position of given string.
 
 
   //echo substr("i am ashish",4,11);
-
+  //create the substring of given string.
 
   //echo strtolower("ASHISH");
-
+  //convert string to lowercase chars.
 
  // echo strtoupper("ashish");
-//
+//convert strung to uppercase chars.
 
   //echo trim("      My Name Is Ashish         ");
   // remove the white space from front and end of the string.
