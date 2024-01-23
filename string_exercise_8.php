@@ -1,6 +1,6 @@
 <!-- Write a PHP function to determine whether a given number is prime. -->
 <?php 
-$num = 1310;
+$num =234;                 //readline("enter a number");
 $value = check_primeornot($num);
 if ($value == true)
    echo "It is a prime number";

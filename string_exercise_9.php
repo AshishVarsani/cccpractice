@@ -13,13 +13,10 @@
 
 // }
 
-
+// with recursion
 
 
 function fibonacci($number, $num1 = 0, $num2 = 1) {
-    if($number == 0) {
-        return;
-    }
     echo $num1 . " ";
     $num3 = $num1 + $num2;
     fibonacci($number - 1, $num2, $num3);

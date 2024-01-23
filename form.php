@@ -4,7 +4,7 @@
     <title>Your Page Title</title>
 </head>
 <body>
-    <form action="" method="post">
+    <form action="form_backend.php" method="post">
                 
                     <input type="text" class="input" name="product_name" placeholder="Product Name" id="product_name" required pattern="[a-zA-Z'-'\s]*"> <br><br>
                     <input type="text" class="input" name="sku" placeholder="SKU" id="sku" required pattern="[a-zA-Z'-'\s]*">
@@ -17,8 +17,8 @@
                         <label for="bundle">Bundle</label>
 
                 <br><br>
-                    <label for="Category">Category:</label>
-                    <select id="Category" name="Category" class="input">
+                    <label name="category">Category:</label>
+                    <select id="category" name="category" class="input">
                         <option value="bgr">Bar & Game Room</option>
                         <option value="bedroom">Bedroom</option>
                         <option value="decor">Decor</option>
