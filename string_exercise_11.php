@@ -17,7 +17,7 @@ function bubblesort($arrayToSort)
 
     return $arrayToSort;
 }
-echo "Sorted Array is: " . implode(",",bubblesort($arrayToSort)) . "<br>"; 
+echo "Sorted Array is:-" . "[" . implode(",",bubblesort($arrayToSort)) . "]"; 
 
 
 ?> 
