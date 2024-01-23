@@ -4,7 +4,7 @@
  // return length of string
 
 
-  //echo str_replace("hello","ashish","hello word");
+  // echo str_replace("hello","ashish","hello word");
   // replace the given string to
   
   //echo strpos("my name is ashish","ashish");
@@ -47,7 +47,7 @@ echo htmlentities($str); */
 //echo str_shuffle("Ashish");
 //randomly shuffle all char. of string
 
-//print_r(str_split("my name is ashish",4));
+// print_r(str_split("my name is ashish",4));
 //split the string to array for given length
 
 //echo str_word_count("my name is ashish");
@@ -62,9 +62,9 @@ echo htmlentities($str); */
 //echo str_pad($str,12,'*',STR_PAD_BOTH);
 //Pads a string to a certain length with another string.
 
-//$str1="ashish";
-//$str2="kashis";
-//echo strcoll($str1,$str2);
+// $str1="ashish";                      /* 0 - if the two strings are equal
+// $str2="kashis";                         <0 - if string1 is less than string2
+// echo strcoll($str1,$str2);              >0 - if string1 is greater than string2   */
 //locale based string comparison.
 
 //echo strcspn("Ashish", "h",0, 5);

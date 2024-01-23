@@ -41,6 +41,22 @@ echo var_dump($nullVar) . "<br>";      */
 
 
 
+   // math function
+
+  // $x=234;
+  //  echo abs($x);
+  //  //Returns the absolute value of a number.
+
+
+  // $x=22.2;
+  // echo ceil($x);
+  // //Rounds a number up to the nearest integer.
+
+
+  // $number=22.2;
+  // echo floor($number);
+  // //Rounds a number down to the nearest integer.
+
    // php operator
 
    // arithmetic operator
