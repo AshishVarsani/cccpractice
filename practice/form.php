@@ -126,7 +126,7 @@ else {
     <title>Your Page Title</title>
 </head>
 <body>
-    <form action="phpw2_backend.php" method="post">
+    <form action="form_backend.php" method="post">
         <div class="box">
             <div class="container">
                 <div class="top"></div>
