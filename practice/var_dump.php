@@ -20,24 +20,24 @@ echo var_dump($nullVar) . "<br>";      */
 
 
    //Type casting
-   /*
    
-   echo (int) 30.14 . "<br>";
+   
+  //  echo (int) 30.14 . "<br>";
 
-   echo (float) 2 . "<br>";
-   echo (int)"1234". "<br>" ;
+  //  echo (float) 2 . "<br>";
+  //  echo (int)"1234". "<br>" ;
 
-   $boolVar = false;
-   $boolvar = (string)$boolVar;
-   echo var_dump($boolvar) . "<br>";
+  //  $boolVar = false;
+  //  $boolvar = (string)$boolVar;
+  //  echo var_dump($boolvar) . "<br>";
 
-   $stringVar="true";
-   $stringVar = (bool)$stringVar;
-   echo var_dump($stringVar) . "<br>";  
+  //  $stringVar="true";
+  //  $stringVar = (bool)$stringVar;
+  //  echo var_dump($stringVar) . "<br>";  
 
-   $arrayVar="1,2,3";
-   $arrayVar=(array)$arrayVar;
-   echo var_dump($arrayVar);        */
+  //  $arrayVar="1,2,3";
+  //  $arrayVar=(array)$arrayVar;
+  //  echo var_dump($arrayVar);        
 
 
 

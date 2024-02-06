@@ -1,5 +1,5 @@
 <?php
-include 'connection.php';
+include 'catalog/sql/connection.php';
 
 class QueryBuilder
 {

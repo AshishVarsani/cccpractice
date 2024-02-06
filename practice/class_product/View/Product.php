@@ -103,8 +103,9 @@
             return '<input type="submit" name="submit" value="' . $title . '">';
         }
 
-        public function toHtml()
+        public function toHTML()
         {
             return $this->createForm();
         }
     }
+?>
