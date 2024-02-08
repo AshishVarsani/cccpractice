@@ -1,7 +1,7 @@
 <?php 
-class View_List{
+class View_Product_List{
     public function toHTML(){
-        echo "list";
+        echo "list2";
 }
-}
+}   
 ?>

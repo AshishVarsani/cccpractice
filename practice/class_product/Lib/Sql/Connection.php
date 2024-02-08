@@ -20,14 +20,5 @@ class Lib_Sql_Connection
         return $this->_conn;
 
     }
-
-    public function exec($sql)
-    {
-    	try {
-    		return $this->connect()->query($sql);
-    	} catch(Exception $e) {
-
-    		var_dump($e->getMessage());
-    	}
-    }
+    
 }
