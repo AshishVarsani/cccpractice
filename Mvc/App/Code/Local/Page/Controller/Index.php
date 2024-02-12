@@ -1,6 +1,10 @@
 <?php
-class Page_Controller_Index{
-    public function index(){
-        echo dirname(__FILE__);
+
+class Page_Controller_Index extends Core_Controller_Front_Action
+{
+    public function indexAction()
+    {
+        $layout = $this->getLayout()->toHtml();
+        print_r($layout);
     }
 }
