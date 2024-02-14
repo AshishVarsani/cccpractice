@@ -1,20 +1,16 @@
 <?php
-class Product_Controller_Index
-{
-    public function newAction()
-    {
-        echo "Product New Action";
+
+class Product_Controller_Index{
+    public function saveAction(){
+        echo dirname(__FILE__);
     }
-    public function listAction()
-    {
-        echo "Product List Action";
+    public function deleteAction(){
+        echo dirname(__FILE__);
     }
-    public function saveAction()
-    {
-        echo "Product Save Action";
+    public function updateAction(){
+        echo dirname(__FILE__);
     }
-    public function deleteAction()
-    {
-        echo "Product Delete Action";
+    public function listAction(){
+        echo dirname(__FILE__);
     }
 }

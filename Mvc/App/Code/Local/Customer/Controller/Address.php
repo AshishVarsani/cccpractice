@@ -1,20 +1,16 @@
 <?php
-class Customer_Controller_Address
-{
-    public function newAction()
-    {
-        echo "Address New Action";
+
+class Customer_Controller_Address{
+    public function saveAction(){
+        echo dirname(__FILE__);
     }
-    public function listAction()
-    {
-        echo "Address List Action";
+    public function deleteAction(){
+        echo dirname(__FILE__);
     }
-    public function saveAction()
-    {
-        echo "Address Save Action";
+    public function updateAction(){
+        echo dirname(__FILE__);
     }
-    public function deleteAction()
-    {
-        echo "Address Delete Action";
+    public function listAction(){
+        echo dirname(__FILE__);
     }
 }

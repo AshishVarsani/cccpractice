@@ -1,68 +1,73 @@
 <?php
 
-class Core_Model_Abstract {
+class Core_Model_Abstract
+{
     protected $data = [];
     protected $resourceClass = '';
     protected $collectionClass = '';
     protected $resource = null;
     protected $collection = null;
-    public function __construct() {
+    public function __construct()
+    {
 
     }
-    public function setResourceClass($resourceClass){
-
+    public function setResourceClass($resourceClass)
+    {
     }
-    public function setCollectionClass($collectionClass){
-
+    public function setCollectionClass($collectionClass)
+    {
     }
-    public function setId($id){
-
+    public function setId($id)
+    {
     }
-    public function getId(){
-
+    public function getId()
+    {
     }
-    public function getResource(){
-
+    public function getResource()
+    {
+        $modelClass = get_class($this);
+        // echo $modelClass;
+        $modelClass = str_replace('_Model_', '_Model_Resource_', $modelClass);        
+        return new $modelClass();
     }
-    public function getCollection(){
-
+    public function getCollection()
+    {
     }
-    public function getPrimaryKey(){
-
+    public function getPrimaryKey()
+    {
     }
-    public function getTableName(){
-
+    public function getTableName()
+    {
     }
-    public function __set($key, $value){
-
+    public function __set($key, $value)
+    {
     }
-    public function __get($key){
-
+    public function __get($key)
+    {
     }
-    public function __unset($key){
-
+    public function __unset($key)
+    {
     }
-    public function getData($key=null){
-
+    public function getData($key = null)
+    {
     }
-    public function setData($data){
-
+    public function setData($data)
+    {
     }
-    public function addData($key, $value){
-
+    public function addData($key, $value)
+    {
     }
-    public function removeData($key = null){
-
+    public function removeData($key = null)
+    {
     }
-    public function save(){
-
+    public function save()
+    {
     }
-    public function load($id, $column=null){
-
+    public function load($id, $column = null)
+    {
+        print_r($this->getResource());
     }
-    public function delete(){
-
+    public function delete()
+    {
     }
 }
-
-?>
