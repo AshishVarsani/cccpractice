@@ -2,8 +2,8 @@
 
 class Core_Block_Template extends Core_Block_Abstract
 {
-    protected $_child = array();
-    // public $template;
+    public $template;
+    protected $_child = [];
     public function toHtml()
     {
         $this->render();
@@ -18,27 +18,22 @@ class Core_Block_Template extends Core_Block_Abstract
     }
     public function getChild($key)
     {
-        return $this->_child[$key];
+        return isset($this->_child[$key]) ? $this->_child[$key] : null;
     }
-    public function getChildHtml($key){
+    public function getChildHtml($key)
+    {
         $html = '';
-        if($key == '' && count($this->_child)){
-            foreach($this->_child as $_child){
-                $html .= $_child->toHtml();  
+        if ($key == '' && count($this->_child)) {
+            foreach ($this->_child as $_child) {
+                $html .= $_child->toHtml();
             }
-        }else{
-            $html = $this->getChild($key)->toHtml();
+        } else {
+            $html = $this->_child[$key]->toHtml();
         }
         return $html;
     }
     public function getRequest()
     {
-        return Mage::getModel('core/request');
+        return  Mage::getModel("core/request");
     }
-    // public function setTemplate($template){
-    //     $this->template = $template;
-    // }
-    // public function getTemplate(){
-    //     return $this->template;
-    // }
 }

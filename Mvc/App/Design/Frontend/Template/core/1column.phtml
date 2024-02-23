@@ -1,26 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
-    <?php echo $this->getChildHtml('head') ?>
+    <title>MVC</title>
+    <?php
+    $this->getChildHtml('head');
+    ?>
 </head>
 
 <body>
+
     <div>
-        <?php echo $this->getChildHtml('header') ?>
+        <header><?php $this->getChildHtml('header'); ?> </header>
     </div>
+    <div><?php $this->getChildHtml('content'); ?> </div>
+    <div><?php $this->getChildHtml('messages'); ?> </div>
     <div>
-        <?php /*echo $this->getChildHtml('messages')*/ ?>
+        <footer><?php $this->getChildHtml('footer'); ?> </footer>
     </div>
-    <div>
-        <?php echo $this->getChildHtml('content') ?>
-    </div>
-    <div>
-        <?php echo $this->getChildHtml('footer') ?>
-    </div>
+
 </body>
 
 </html>
