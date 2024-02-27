@@ -3,7 +3,7 @@ $product_model = $this->getProduct();
 ?>
 <div class="form" style="border:1px solid black; width:30vw; padding: 15px">
     <h2>Product Form</h2>
-    <form method="POST" action="<?php echo $this->getUrl('Admin/Catalog_product/save'); ?>">
+    <form method="POST" action="<?php echo $this->getUrl('admin/catalog_product/save'); ?>">
         <div class="row">
             <input type="hidden" name="Catalog_product[product_id]" value="<?php echo $product_model->getProductId()?>">
         </div>
@@ -43,6 +43,11 @@ $product_model = $this->getProduct();
         </div>
 
         <div class="row">
+            <label for="category_id ">Category Id : </label>
+            <input type="text" name="Catalog_product[category_id]" id="category_id" value="<?php echo $product_model->getCategoryId()?>">
+        </div>
+
+        <div class="row">
             <label for="price">Price : </label>
             <input type="number" name="Catalog_product[price]" id="price" value="<?php echo $product_model->getPrice()?>">
         </div>
@@ -73,8 +78,11 @@ $product_model = $this->getProduct();
         </div>
 
         <div class="row">
-            <label for="status">Status : </label>
-            <input type="text" name="Catalog_product[status]" id="status" value="<?php echo $product_model->getStatus()?>">
+        <label for="status">Status:</label>
+                        <select id="status" name="Catalog_product[status]" class="input">
+                            <option value="1"  <?php echo $product_model->getStatus()==1?'selected' :'' ?>>Enabled</option>
+                            <option value="0" <?php echo $product_model->getStatus()==0?'selected' :'' ?>>Disabled</option>
+                        </select>
         </div>
 
         <div class="row">

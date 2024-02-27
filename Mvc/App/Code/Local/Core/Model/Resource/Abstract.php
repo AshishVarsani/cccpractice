@@ -14,14 +14,14 @@ class Core_Model_Resource_Abstract {
         //    echo $query;
         return $this->getAdapter()->fetchRow($query);
     }
-    public function save(Catalog_Model_Product $product)
+    public function save($product)
     {
         $data = $product->getData();
         if(isset($data[$this->getPrimaryKey()]) && !empty($data[$this->getPrimaryKey()])){
             unset($data[$this->getPrimaryKey()]);
             $sql = $this->updateSql(
                 $this->getTableName(),
-                $data, 
+                $data,
                 [$this->getPrimaryKey()=>$product->getId()]
             );
             $id = $this->getAdapter()->update($sql);
@@ -31,11 +31,12 @@ class Core_Model_Resource_Abstract {
         $product->setId($id);
     }
     }
-    public function delete($id)
+    public function delete(Core_Model_Abstract $abstract )
     {
+        $id = $abstract->getId();
         $where = [$this->getPrimaryKey() => $id];
         $sql = $this->deleteSql($this->getTableName(),$where);
-        $id = $this->getAdapter()->delete($sql);
+        return $this->getAdapter()->delete($sql);
     }
     public function insertSql($tablename, array $data)
     {
