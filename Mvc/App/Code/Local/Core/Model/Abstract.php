@@ -30,7 +30,6 @@ class Core_Model_Abstract  {
         return new $this->_resourceClass();
     }
     public function getCollection(){
-        
     }
     public function getTableName(){
     }
