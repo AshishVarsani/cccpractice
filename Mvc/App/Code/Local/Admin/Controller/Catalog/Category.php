@@ -1,10 +1,10 @@
 <?php
-class Admin_Controller_Catalog_Category extends Core_Controller_Front_Action
+class Admin_Controller_Catalog_Category extends Core_Controller_Admin_Action
 {
     public function includefile($newfile)
     {
         $newfile->addCss("category/form.css");
-        $newfile->addCss("category/List.css");
+        $newfile->addCss("category/list.css");
     }
     public function formAction()
     {
@@ -22,12 +22,16 @@ class Admin_Controller_Catalog_Category extends Core_Controller_Front_Action
         $category = Mage::getModel("catalog/category")
             ->setData($data);
         $category->save();
+        $location = Mage::getBaseUrl("admin/catalog_category/list");
+        header("Location: $location");
     }
     public function deleteAction()
     {
         $id = $this->getRequest()->getparams("id");
         $category = Mage::getModel("catalog/category")->load($id);
         $category->delete();
+        $location = Mage::getBaseUrl("admin/catalog_category/list");
+        header("Location: $location");
     }
     public function listAction()
     {

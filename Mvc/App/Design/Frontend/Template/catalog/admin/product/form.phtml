@@ -1,5 +1,7 @@
 <?php
-$product_model = $this->getProduct();    
+$product_model = $this->getProduct();
+// Mage::getSingleton('core/session')->set('customerId', 1); 
+// echo Mage::getSingleton('core/session')->get('customerId');
 ?>
 <div class="form" style="border:1px solid black; width:30vw; padding: 15px">
     <h2>Product Form</h2>
@@ -41,12 +43,17 @@ $product_model = $this->getProduct();
             <label for="link">Link : </label>
             <input type="text" name="Catalog_product[link]" id="link" value="<?php echo $product_model->getLink()?>">
         </div>
-
         <div class="row">
-            <label for="category_id ">Category Id : </label>
-            <input type="text" name="Catalog_product[category_id]" id="category_id" value="<?php echo $product_model->getCategoryId()?>">
+            <label for="category_id">Category: </label>
+            <select name="Catalog_product[category_id]" id="category_id" class="select-box">
+                        <option value="">---------SELECT---------</option>
+                        <?php foreach ($this->getCategoryNm() as $category) : ?>
+                            <option value="<?php echo $category->getCategoryId() ?>" <?php echo $category->getCategoryId() == $product_model->getCategoryId() ? 'selected' : ''; ?>>
+                                <?php echo $category->getCategoryName(); ?>
+                            </option>
+                        <?php endforeach; ?>
+                    </select>
         </div>
-
         <div class="row">
             <label for="price">Price : </label>
             <input type="number" name="Catalog_product[price]" id="price" value="<?php echo $product_model->getPrice()?>">
@@ -79,7 +86,7 @@ $product_model = $this->getProduct();
 
         <div class="row">
         <label for="status">Status:</label>
-                        <select id="status" name="Catalog_product[status]" class="input">
+                        <select id="status" name="Catalog_product[status]" class="select-box">
                             <option value="1"  <?php echo $product_model->getStatus()==1?'selected' :'' ?>>Enabled</option>
                             <option value="0" <?php echo $product_model->getStatus()==0?'selected' :'' ?>>Disabled</option>
                         </select>

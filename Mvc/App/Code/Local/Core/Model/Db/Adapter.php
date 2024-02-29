@@ -8,7 +8,7 @@ class Core_Model_Db_Adapter
         "username" => "root",
         "password" => "",
         "dbname" => "ccc_practice",
-
+        
     ];
     public $connect = null;
     public function connect()
@@ -64,7 +64,7 @@ class Core_Model_Db_Adapter
         $this->connect();
         $sql = mysqli_query($this->connect(), $query);
         if ($sql) {
-            echo"<script>alert('Data Update Successfully')</script>";
+            return mysqli_insert_id($this->connect());
         } else {
             return FALSE;
         }
@@ -74,7 +74,7 @@ class Core_Model_Db_Adapter
         $this->connect();
         $sql = mysqli_query($this->connect(), $query);
         if ($sql) {
-            echo"<script>alert('Data Delete Successfully')</script>";
+            return mysqli_insert_id($this->connect());
         } else {
             return FALSE;
         }

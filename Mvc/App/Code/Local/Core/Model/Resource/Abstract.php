@@ -11,10 +11,10 @@ class Core_Model_Resource_Abstract {
     public function load($id, $column = null)
     {
         $query = "SELECT * FROM {$this->_tableName} WHERE {$this->_primarykey} = {$id} LIMIT 1 ";
-        //    echo $query;
+        //    echo $query;die();
         return $this->getAdapter()->fetchRow($query);
     }
-    public function save($product)
+    public function save(Core_Model_Abstract $product)
     {
         $data = $product->getData();
         if(isset($data[$this->getPrimaryKey()]) && !empty($data[$this->getPrimaryKey()])){

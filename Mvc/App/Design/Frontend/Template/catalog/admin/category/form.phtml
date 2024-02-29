@@ -11,10 +11,10 @@ $product_model = $this->getCategory();
         </div>
         <div class="row">
             <label for="status">Status : </label>
-            <select id="status" name="catalog_category[status]" class="row">
+            <select id="status" name="catalog_category[status]" class="select-box">
                             <option value="1"  <?php echo $product_model->getStatus()==1?'selected' :'' ?>>Enabled</option>
                             <option value="0" <?php echo $product_model->getStatus()==0?'selected' :'' ?>>Disabled</option>
-                        </select
+</select>
         </div>
 
         <div class="row">
