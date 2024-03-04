@@ -1,5 +1,5 @@
 <?php
-class Banner_Model_Resource_Banner extends Core_Model_Resource_Abstract
+class Admin_Model_Resource_Admin extends Core_Model_Resource_Abstract
 {
     public function init($tablename, $primarykey)
     {
@@ -8,6 +8,6 @@ class Banner_Model_Resource_Banner extends Core_Model_Resource_Abstract
     }
     public function __construct()
     {
-        $this->init('banner', 'banner_id');
+        $this->init('admin', 'admin_id');
     }
 }

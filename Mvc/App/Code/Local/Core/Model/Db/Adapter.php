@@ -8,7 +8,7 @@ class Core_Model_Db_Adapter
         "username" => "root",
         "password" => "",
         "dbname" => "ccc_practice",
-        
+
     ];
     public $connect = null;
     public function connect()

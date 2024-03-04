@@ -81,4 +81,8 @@ class Customer_Controller_Account extends Core_Controller_Front_Action
         $child->addChild('dashboard', $dashboard);
         $layout->toHtml();
     }
+    public function logoutAction() {
+        Mage::getSingleton('core/session')->unsetAll();
+        $this->setRedairect("customer/account/login");
+    }
 }

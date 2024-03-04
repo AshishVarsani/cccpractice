@@ -1,0 +1,26 @@
+<div class="form">
+    <h2>Image Upload Form</h2>
+    <form action="<?php echo $this->getUrl('admin/banner/save') ?>" method="post">
+        <?php $banner = $this->getBannerForm(); ?>
+        <div class="row">
+            <input type="hidden" name="banner[banner_id]" value="<?php echo $banner->getBannerId(); ?>">
+        </div>
+        <div class=" row">
+            <label for="image">Select Banner Image:</label>
+            <input type="file" name="banner[banner_image]" value="<?php echo $banner->getBannerImage(); ?>" id="image"
+                accept="image/*">
+        </div>
+        <div class=" row">
+            <label for="sku">Status : </label>
+            <input type="text" name="banner[status]" value="<?php echo $banner->getStatus(); ?>" id="staus">
+        </div>
+
+        <div class="row">
+            <label for="sku">Show On : </label>
+            <input type="text" name="banner[show_on]" value="<?php echo $banner->getShowOn(); ?>" id="show_on">
+        </div>
+        <div class="row">
+            <input type="submit" value="Submit">
+        </div>
+    </form>
+</div>

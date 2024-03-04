@@ -1,17 +1,15 @@
-<?php
-
-class Page_Controller_Index extends Core_Controller_Front_Action
-{
-    public function indexAction()
-    {
+<?php 
+class Admin_Controller_Index extends Core_Controller_Admin_Action{
+    public function indexAction() {
         $layout = $this->getLayout();
         $layout->getChild("head")->addCss("productForm.css");
         $layout->getChild("head")->addCss("page.css");
         $banner  = $layout->createBlock("core/template")
-                    ->setTemplate("banner/banner.phtml");
+                    ->setTemplate("catalog/admin/admindashbord.phtml");
         $layout->getChild("content")
-                    ->addChild('banner',$banner)
-                    ->addChild('banner1',$banner);
+                    ->addChild('banner',$banner);
         $layout->toHtml();
     }
 }
+
+?>
