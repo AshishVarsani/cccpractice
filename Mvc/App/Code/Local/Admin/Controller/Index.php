@@ -4,8 +4,7 @@ class Admin_Controller_Index extends Core_Controller_Admin_Action{
         $layout = $this->getLayout();
         $layout->getChild("head")->addCss("productForm.css");
         $layout->getChild("head")->addCss("page.css");
-        $banner  = $layout->createBlock("core/template")
-                    ->setTemplate("catalog/admin/admindashbord.phtml");
+        $banner  = $layout->createBlock("admin/dashboard");
         $layout->getChild("content")
                     ->addChild('banner',$banner);
         $layout->toHtml();

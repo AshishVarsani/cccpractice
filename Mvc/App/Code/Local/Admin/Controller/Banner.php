@@ -5,8 +5,8 @@ class Admin_Controller_Banner extends Core_Controller_Admin_Action
     protected $_allowedAction = [];
     public function includefile($newfile)
     {
-        $newfile->addCss("product/productForm.css");
-        $newfile->addCss("product/list.css");
+        $newfile->addCss("banner/form.css");
+        $newfile->addCss("banner/list.css");
     }
     public function formAction()
     {
@@ -20,36 +20,19 @@ class Admin_Controller_Banner extends Core_Controller_Admin_Action
     }
     public function saveAction()
     {
-        // Check if file is uploaded without errors
-        if (isset($_FILES["banner_image"]) && $_FILES["banner_image"]["error"] == 0) {
-            $uploadDir = Mage::getBaseDir('media/banner/');
-            $image = basename($_FILES["banner_image"]["name"]);
-            $uploadFile = $uploadDir . $image;
-            if (file_exists($uploadFile)) {
-                echo "File already exists.";
-            } else {
-                // Move uploaded file to specified directory
-                if (move_uploaded_file($_FILES["banner_image"]["tmp_name"], $uploadFile)) {
-                    echo "File is uploaded successfully.";
-                    // Handle other form data and database operations here
-                    $data = $this->getRequest()->getParams("banner");
-                    $data = array_merge($data, ['banner_image' => $image]);
-                    Mage::getModel("banner/banner")
-                        ->setData($data)
-                        ->save();
-                    $this->setRedairect('admin/banner/list');
-                } else {
-                    echo "Error uploading file.";
-                }
-            }
-        } else {
-            // No file uploaded, handle other form data and database operations here
-            $data = $this->getRequest()->getParams("banner");
-            Mage::getModel("banner/banner")
-                ->setData($data)
-                ->save();
-            $this->setRedairect('admin/banner/list');
+        $banner = $this->getRequest()->getParams('banner');
+        if (isset($_POST['submit'])) {
+            $imageName = $_FILES['banner_image']['name'];
+            $tmp_name = $_FILES['banner_image']['tmp_name'];
+            $folder = "media/banner/" . $imageName;
+            move_uploaded_file($tmp_name, $folder);
+
         }
+        $banner['banner_image'] = $imageName;
+        $_product = Mage::getModel('banner/banner')
+            ->setData($banner)
+            ->save();
+        $this->setRedirect('admin/banner/list');
     }
     public function deleteAction()
     {

@@ -17,9 +17,9 @@ class Admin_Controller_User extends Core_Controller_Admin_Action{
             }
             if ($exists == "Yes") {
                 Mage::getSingleton('core/session')->set('logged_in_admin_user_id', $adminId);
-                $this->setRedairect("admin");
+                $this->setRedirect("admin");
             } else {
-                $this->setRedairect("admin/user/login");
+                $this->setRedirect("admin/user/login");
             }
         } else {
             $layout =  $this->getLayout();
@@ -35,7 +35,7 @@ class Admin_Controller_User extends Core_Controller_Admin_Action{
     }
     public function logoutAction() {
         Mage::getSingleton('core/session')->unsetAll();
-        $this->setRedairect("admin/user/login");
+        $this->setRedirect("admin/user/login");
     }
 
 }

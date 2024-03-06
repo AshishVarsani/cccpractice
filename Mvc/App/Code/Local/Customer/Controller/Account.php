@@ -10,7 +10,7 @@ class Customer_Controller_Account extends Core_Controller_Front_Action
             !in_array($this->getRequest()->getActionName(), $this->_allowedAction) &&
             !Mage::getSingleton('core/session')->get('logged_in_customer_id')
         ) {
-            $this->setRedairect('customer/account/login');
+            $this->setRedirect('customer/account/login');
         }
     }
     public function registerAction()
@@ -40,9 +40,9 @@ class Customer_Controller_Account extends Core_Controller_Front_Action
             }
             if ($exists == "Yes") {
                 Mage::getSingleton('core/session')->set('logged_in_customer_id', $customerId);
-                $this->setRedairect("customer/account/dashboard");
+                $this->setRedirect("customer/account/dashboard");
             } else {
-                $this->setRedairect("customer/account/dashboard");
+                $this->setRedirect("customer/account/dashboard");
             }
         } else {
             $layout =  $this->getLayout();
@@ -83,6 +83,6 @@ class Customer_Controller_Account extends Core_Controller_Front_Action
     }
     public function logoutAction() {
         Mage::getSingleton('core/session')->unsetAll();
-        $this->setRedairect("customer/account/login");
+        $this->setRedirect("customer/account/login");
     }
 }

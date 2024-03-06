@@ -12,8 +12,8 @@ class Catalog_Controller_Product extends Core_Controller_Front_Action {
         $newfile =  $layout->getChild("head");
         $this->includefile($newfile);
         $child = $layout->getChild('content');
-        $productForm = $layout->createBlock('catalog/admin_product_list');
-        $child->addChild('list', $productForm);
+        $productForm = $layout->createBlock('catalog/product_view');
+        $child->addChild('view', $productForm);
         $layout->toHtml();
     }
 }

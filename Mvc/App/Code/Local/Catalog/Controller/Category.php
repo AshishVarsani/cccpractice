@@ -3,8 +3,7 @@
 class Catalog_Controller_Category extends Core_Controller_Front_Action {
     public function includefile($newfile)
     {
-        $newfile->addCss("category/form.css");
-        $newfile->addCss("category/list.css");
+        $newfile->addCss("catalog/category/view.css");
     }
     public function viewAction()
     {
@@ -12,10 +11,11 @@ class Catalog_Controller_Category extends Core_Controller_Front_Action {
         $newfile =  $layout->getChild("head");
         $this->includefile($newfile);
         $child = $layout->getChild('content');
-        $productForm = $layout->createBlock('catalog/admin_product_list');
-        $child->addChild('list', $productForm);
+        $productForm = $layout->createBlock('catalog/category_view');
+        $child->addChild('view', $productForm);
         $layout->toHtml();
     }
+
 }
 
 ?>

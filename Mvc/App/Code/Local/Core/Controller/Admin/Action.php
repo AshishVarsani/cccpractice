@@ -10,7 +10,7 @@ class Core_Controller_Admin_Action extends Core_Controller_Front_Action
         !in_array($this->getRequest()->getActionName(), $this->_allowedAction) &&
         !Mage::getSingleton('core/session')->get('logged_in_admin_user_id')
     ) {
-        $this->setRedairect('admin/user/login');
+        $this->setRedirect('admin/user/login');
     }
     return $this;
   }
