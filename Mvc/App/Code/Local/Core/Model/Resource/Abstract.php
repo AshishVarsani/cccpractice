@@ -6,8 +6,11 @@ class Core_Model_Resource_Abstract {
     public function getTableName(){
         return $this->_tableName;
     }
-    // above part is abtract
-
+    public function init($tablename, $primarykey)
+    {
+        $this->_tableName = $tablename;
+        $this->_primarykey = $primarykey;
+    }
     public function load($id, $column = null)
     {
         $query = "SELECT * FROM {$this->_tableName} WHERE {$this->_primarykey} = {$id} LIMIT 1 ";
@@ -18,7 +21,7 @@ class Core_Model_Resource_Abstract {
         $data = $product->getData();
         if(isset($data[$this->getPrimaryKey()]) && !empty($data[$this->getPrimaryKey()])){
             
-            unset($data[$this->getPrimaryKey()]);
+            // unset($data[$this->getPrimaryKey()]);
             $sql = $this->updateSql(
                 $this->getTableName(),
                 $data,
