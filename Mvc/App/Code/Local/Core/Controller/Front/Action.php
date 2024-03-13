@@ -12,12 +12,6 @@ class Core_Controller_Front_Action
       $layout->getChild("head")->addJs("header.js");
   }
   public function init(){
-    if (
-      !in_array($this->getRequest()->getActionName(), $this->_allowedAction) &&
-      !Mage::getSingleton('core/session')->get('logged_in_customer_user_id')
-  ) {
-      $this->setRedirect('customer/account/login');
-  }
   return $this;
   }
   public function getLayout()

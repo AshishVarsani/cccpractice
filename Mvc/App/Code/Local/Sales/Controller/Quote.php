@@ -5,7 +5,7 @@ class Sales_Controller_Quote extends Core_Controller_Front_Action
     public function addAction()
     {
         $request = Mage::getSingleton('core/request')->getParams('cart');
-        $quote = Mage::getSingleton('sales/quote')->addProduct($request);
+        Mage::getSingleton('sales/quote')->addProduct($request);
         $this->setRedirect('cart');
     }
     public function deleteAction()
@@ -17,10 +17,29 @@ class Sales_Controller_Quote extends Core_Controller_Front_Action
         $quote = Mage::getSingleton('sales/quote')->deleteProduct($request);
         $this->setRedirect('cart');
     }
-    public function updateAction()
-    {
-        $request = Mage::getSingleton('core/request')->getParams('upcart');
-        $quote = Mage::getSingleton('sales/quote')->updateProduct($request);
+    public function addressAction(){
+        $quoteId = Mage::getSingleton('core/session')->get("quote_id");
+        if($quoteId){
+        $addressData = Mage::getSingleton('core/request')->getParams('checkout');
+         Mage::getSingleton('sales/quote')->addAddress($addressData);
+        // $quoteCustomerId = Mage::getSingleton('core/session')->get('quote_customer_id');
+        // $addressData = Mage::getSingleton('core/request')->getParams('checkout');
+        // $modelName = Mage::getSingleton('sales/quote_customer');
+        // $modelName->setData($addressData);
+        // if($quoteCustomerId){
+        //     $modelName->addData('quote_customer_id',$quoteCustomerId)
+        //     ->save();
+            $this->setRedirect('cart/checkout/form');
+
+        // }else{
+        //     $modelName->save();
+
+        //     $quoteCustomerId = $modelName->getId();
+        //     Mage::getSingleton('core/session')->set('quote_customer_id',$quoteCustomerId);
+        // }
+        // $this->setRedirect('cart/checkout/form');
+    }else{
         $this->setRedirect('cart');
+    }
     }
 }

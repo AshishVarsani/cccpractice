@@ -5,7 +5,7 @@
                 $product = $this->getProductList()->addFieldToFilter('product_id', $item->getProductId())->getData()[0];
             ?>
               <div class="row main align-items-center">
-                  <form action="<?php echo Mage::getBaseUrl('sales/quote/update')?>" method="post">
+                  <form action="<?php echo Mage::getBaseUrl('sales/quote/add')?>" method="post">
                       <table>
                           <thead>
                               <tr>
@@ -21,10 +21,10 @@
                                   <pre>
                     <td><?php print_r($product->getName()); ?></td>
                     <td><?php print_r($product->getPrice()); ?></td>
-                    <input type="hidden" name="upcart[product_id]" value="<?php echo $product->getProductId(); ?>">
-                    <input type="hidden" name="upcart[quote_id]" value="<?php echo $item->getQuoteId(); ?>">
-                    <input type="hidden" name="upcart[item_id]" value="<?php echo $item->getItemId(); ?>">
-                    <td><input type="number" name="upcart[qty]" value="<?php print_r($item->getQty()); ?>" min="1"></td>
+                    <input type="hidden" name="cart[product_id]" value="<?php echo $product->getProductId(); ?>">
+                    <input type="hidden" name="cart[quote_id]" value="<?php echo $item->getQuoteId(); ?>">
+                    <input type="hidden" name="cart[item_id]" value="<?php echo $item->getItemId(); ?>">
+                    <td><input type="number" name="cart[qty]" value="<?php print_r($item->getQty()); ?>" min="1"></td>
                     <td><?php print_r($item->getRowTotal()); ?></td>
                     <td>
                         <button class="button" type="submit" name="update">Update</button>
@@ -41,6 +41,7 @@
           <tr>
             <th>Total:   </th><th><?php print_r($total); ?></th>
         <a href="<?php echo Mage::getBaseUrl('catalog/product/view');?>" class="button">Back</a>
+        <a href="<?php echo Mage::getBaseUrl('cart/checkout/form');?>" class="button">Checkout</a>
           </tr>
     </div>
       </div>

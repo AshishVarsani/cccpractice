@@ -1,0 +1,34 @@
+<div class="header">
+  <a href="#"><img id="logo" src=<?php echo Mage::getBaseUrl() . "\skin\image\ccc.jpg" ?> alt="Your Logo"></a>
+  <div class="header-right">
+    <div class="pill-nav" id="myDIV">
+      <ul>
+      <div class="dropdown">
+          <a  class="btn" href="<?php echo $this->getHeaderUrl(""); ?>">  Home </a>
+        </div>
+        <div class="dropdown">
+          <a class="btn">  Product </a>
+          <div class="dropdown-content">
+            <a href="<?php echo $this->getHeaderUrl("admin/catalog_product/form"); ?>">Product Form</a>
+            <a href=" <?php echo $this->getHeaderUrl("admin/catalog_product/list"); ?>">Product List</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a class="btn">  Category </a>
+          <div class="dropdown-content">
+            <a href="<?php echo $this->getHeaderUrl("admin/catalog_category/form"); ?>">Category Form</a>
+            <a href=" <?php echo $this->getHeaderUrl("admin/catalog_category/list"); ?>">Category List</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a class="btn">  Banner </a>
+          <div class="dropdown-content">
+            <a href="<?php echo $this->getHeaderUrl("admin/banner/form"); ?>">Banner Form</a>
+            <a href=" <?php echo $this->getHeaderUrl("admin/banner/list"); ?>">Category List</a>
+          </div>
+        </div>
+        <a class="btn" href="<?php echo $this->getHeaderUrl("admin/user/logout"); ?>">Log Out</a>
+      </ul>
+    </div>
+  </div>
+</div>

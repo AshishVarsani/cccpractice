@@ -1,0 +1,56 @@
+<?php if(isset($this->getAddress()[0])){ $customerData = $this->getAddress()[0];}?>
+<div class="form">
+    <h2>Checkout</h2>
+    <form method="POST" action="<?php echo $this->getUrl('sales/quote/address') ?>">
+        <div>
+            <input type="hidden" name="checkout[customer_id]" value="<?php  print_r($this->getCustomerId());?>">
+            <input type="hidden" name="checkout[email]" value="<?php  print_r($this->getCustomerEmails()[0]->getCustomerEmail()); ?>">
+            <input type="hidden" name="checkout[quote_id]" value="<?php   print_r($this->getQuoteId()); ?>">
+        </div>
+        <div class="row">
+            <div>       
+                <label for="billing_address">Billing Address:</label>
+                <input type="text" name="checkout[billing_address]" id="billing_address" value="<?php isset($customerData) ? print_r($customerData->getBillingAddress()) : ''; ?>">
+            </div>
+            <div>
+                <label for="billing_city">Billing City:</label>
+                <input type="text" name="checkout[billing_city]" id="billing_city" value="<?php isset($customerData) ? print_r($customerData->getBillingCity()) : ''; ?>">
+            </div>
+            <div>
+                <label for="billing_region">Billing Region:</label>
+                <input type="text" name="checkout[billing_region]" id="billing_region" value="<?php isset($customerData) ? print_r($customerData->getBillingRegion()) : ''; ?>">
+            </div>
+            <div>
+                <label for="billing_country">Billing Country:</label>
+                <input type="text" name="checkout[billing_country]" id="billing_country" value="<?php isset($customerData) ? print_r($customerData->getBillingCountry()) : ''; ?>">
+            </div>
+            <div>
+                <label for="billing_phone">Billing Phone:</label>
+                <input type="text" name="checkout[billing_phone]" id="billing_phone" value="<?php isset($customerData) ? print_r($customerData->getBillingPhone()) : ''; ?>">
+            </div>
+            <div>
+                <label for="shipping_address">Shipping Address:</label>
+                <input type="text" name="checkout[shipping_address]" id="shipping_address" value="<?php isset($customerData) ? print_r($customerData->getShippingAddress()) : ''; ?>">
+            </div>
+            <div>
+                <label for="shipping_city">Shipping City:</label>
+                <input type="text" name="checkout[shipping_city]" id="shipping_city" value="<?php isset($customerData) ? print_r($customerData->getShippingCity()) : ''; ?>">
+            </div>
+            <div>
+                <label for="shipping_region">Shipping Region:</label>
+                <input type="text" name="checkout[shipping_region]" id="shipping_region" value="<?php isset($customerData) ? print_r($customerData->getShippingRegion()) : ''; ?>">
+            </div>
+            <div>
+                <label for="shipping_country">Shipping Country:</label>
+                <input type="text" name="checkout[shipping_country]" id="shipping_country" value="<?php isset($customerData) ? print_r($customerData->getShippingCountry()) : ''; ?>">
+            </div>
+            <div>
+                <label for="shipping_phone">Shipping Phone:</label>
+                <input type="text" name="checkout[shipping_phone]" id="shipping_phone" value="<?php isset($customerData) ? print_r($customerData->getShippingPhone()) : ''; ?>">
+            </div>
+        </div>
+        <div>
+            <input type="submit" name="submit" value="Submit">
+        </div>
+    </form>
+</div>
