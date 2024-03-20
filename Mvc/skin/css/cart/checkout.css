@@ -1,64 +1,135 @@
-/* Style for form container */
-.form {
-    width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f4f4f4;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+/* Overall container styling */
+.container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-content: center;
+    width: 95%;
+    padding: 2rem;
 }
 
-/* Style for form headings */
-h2 {
-    font-size: 24px;
+/* Form styling */
+.form {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+.form h2 {
+    text-align: center;
     margin-bottom: 20px;
     color: #333;
 }
 
-/* Style for form labels */
-label {
+.form .row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.form label {
     display: block;
+    font-weight: bold;
     margin-bottom: 5px;
-    color: #555;
 }
 
-/* Style for form inputs */
-input[type="text"],
-input[type="password"],
-select {
-    width: calc(100% - 10px);
-    padding: 8px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    font-size: 16px;
-}
-
-/* Style for form submit button */
-input[type="submit"] {
+.form input[type="text"],
+.form select {
     width: 100%;
-    padding: 10px;
-    background-color: #4CAF50;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.form input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+.form button[type="submit"],
+.form input[type="reset"] {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
     border: none;
-    border-radius: 3px;
-    color: white;
-    font-size: 18px;
+    border-radius: 5px;
     cursor: pointer;
 }
 
-input[type="submit"]:hover {
-    background-color: #45a049;
+.form button[type="submit"]:hover,
+.form input[type="reset"]:hover {
+    background-color: #0056b3;
 }
-.register-link {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #007bff; /* Change the color as needed */
-    color: #fff;
-    text-decoration: none;
+
+/* Address list styling */
+.list {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+.list h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.address-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
     border-radius: 5px;
-    margin-top: 10px; /* Adjust as needed */
-    border: 1px solid #007bff; /* Change the border color if needed */
+    cursor: pointer;
 }
-.register-link:hover {
-    background-color: #0056b3; /* Change the hover color if needed */
+
+.address-card:hover {
+    background-color: #f9f9f9;
+}
+
+.address-card h4 {
+    margin: 0 0 10px 0;
+}
+
+.address-details {
+    margin-bottom: 10px;
+}
+
+.address-details p {
+    margin: 0;
+}
+
+.address-details label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}.form-payment select {
+    width: 100%; /* Make the select element full-width */
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.form-payment .row {
+    display: flex; /* Use flexbox to ensure elements within the row expand */
+    flex-direction: column; /* Stack elements vertically */
+}
+
+.form-payment label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-payment input[type="submit"] {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form-payment input[type="submit"]:hover {
+    background-color: #0056b3;
 }

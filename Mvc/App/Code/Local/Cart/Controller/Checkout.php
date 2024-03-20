@@ -13,21 +13,31 @@ class Cart_Controller_Checkout extends Core_Controller_Front_Action
             $this->setRedirect('customer/account/login');
         }
     }
-    public function includeFile($newfile)
-    {
-        $newfile->addCss("cart/checkout.css");
-    }
     public function formAction()
     {
         $layout = $this->getLayout();
-        $newfile =  $layout->getChild("head");
-        $this->includeFile($newfile);
+        $layout->getChild("head")->addCss("cart/checkout.css");
         $child = $layout->getChild('content');
         $productForm = $layout->createBlock('cart/checkout');
         $child->addChild('form', $productForm);
         $layout->toHtml();
     }
-    
+    public function paymentAction(){
+        $layout = $this->getLayout();
+        $layout->getChild("head")->addCss("cart/checkout.css");
+        $child = $layout->getChild('content');
+        $productForm = $layout->createBlock('cart/payment');
+        $child->addChild('payment', $productForm);
+        $layout->toHtml();
+    }
+    public function completeAction(){
+        $layout = $this->getLayout();
+        $newfile =  $layout->getChild("head")->addCss("cart/complete.css");
+        $child = $layout->getChild('content');
+        $productForm = $layout->createBlock('cart/complete');
+        $child->addChild('complete', $productForm);
+        $layout->toHtml();
+    }
 }
 
 

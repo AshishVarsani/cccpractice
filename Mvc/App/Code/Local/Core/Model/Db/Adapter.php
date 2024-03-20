@@ -7,7 +7,7 @@ class Core_Model_Db_Adapter
         "hostname" => "localhost",
         "username" => "root",
         "password" => "",
-        "dbname" => "ccc_practice",
+        "dbname" => "ccc_catalog",
 
     ];
     public $connect = null;
@@ -51,6 +51,7 @@ class Core_Model_Db_Adapter
     }
     public function insert($query)
     {
+        // print_r($query);die;
         $this->connect();
         $sql = mysqli_query($this->connect(), $query);
         if ($sql) {
@@ -61,6 +62,8 @@ class Core_Model_Db_Adapter
     }
     public function update($query)
     {
+        // echo "<pre>";
+        // print_r($query);
         $this->connect();
         $sql = mysqli_query($this->connect(), $query);
         if ($sql) {
